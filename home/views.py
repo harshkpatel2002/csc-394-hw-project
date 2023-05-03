@@ -10,7 +10,7 @@ from IPython.display import Markdown, display
 # new =
 from langchain.chat_models import ChatOpenAI
 
-api_key = "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"
+api_key = "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"
 
 def index(request):
     return render(request, "index.html")
@@ -49,7 +49,7 @@ class TripPlanner:
         documents = SimpleDirectoryReader('prompt').load_data()
 
         llm_predictor = LLMPredictor(llm=ChatOpenAI(openai_api_key=self.api_key,
-                                               model_name="gpt-4",
+                                               model_name="gpt-3.5-turbo",
                                                temperature=1.0,
                                                top_p=1.0,
                                                frequency_penalty=0.5,
