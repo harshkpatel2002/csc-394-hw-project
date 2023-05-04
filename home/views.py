@@ -9,8 +9,11 @@ from IPython.display import Markdown, display
 # old = from langchain import OpenAI
 # new =
 from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
 
-api_key = "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"
+load_dotenv()
+
+api_key = os.getenv('OPENAI_API_KEY')
 
 def index(request):
     return render(request, "index.html")
